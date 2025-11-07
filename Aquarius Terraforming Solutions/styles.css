@@ -1,0 +1,153 @@
+/* Simple responsive landing page styles */
+:root{
+  --bg:#f6f9f8;
+  --accent:#1f8a70;
+  --accent-2:#2fb28a;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --max-width:1100px;
+  --glass: rgba(255,255,255,0.6);
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:#073642;line-height:1.5;-webkit-font-smoothing:antialiased}
+
+.container{max-width:var(--max-width);margin:0 auto;padding:1.25rem}
+
+/* Header */
+.site-header{background:linear-gradient(90deg,var(--card),var(--glass));border-bottom:1px solid rgba(0,0,0,0.04);position:sticky;top:0;z-index:20}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0}
+.brand{display:flex;align-items:center;gap:0.75rem}
+.logo{width:48px;height:48px}
+.brand-text h1{font-size:1.05rem;margin-bottom:0.15rem}
+.tag{font-size:0.8rem;color:var(--muted)}
+
+/* Nav */
+.nav a{margin-left:1rem;text-decoration:none;color:var(--muted);font-weight:600}
+.nav .cta{background:var(--accent);color:white;padding:0.45rem 0.7rem;border-radius:8px;text-decoration:none}
+
+/* Hero */
+.hero{padding:2.5rem 0;background:linear-gradient(180deg, #e8faf0 0%, #fff 60%);border-bottom:1px solid rgba(0,0,0,0.03)}
+.hero-inner{display:flex;gap:1.5rem;align-items:center;justify-content:space-between}
+.hero-content{flex:1;max-width:620px}
+.hero h2{font-size:1.9rem;margin-bottom:0.5rem;color:var(--accent)}
+.hero p{color:var(--muted);margin-bottom:1rem}
+.hero-actions .btn{margin-right:0.5rem}
+
+/* Buttons */
+.btn{background:var(--accent);color:#fff;padding:0.7rem 1rem;border-radius:10px;text-decoration:none;display:inline-block}
+.btn.ghost{background:transparent;border:1px solid rgba(0,0,0,0.06);color:var(--accent)}
+.small{padding:0.4rem 0.6rem;font-size:0.9rem;border-radius:8px}
+
+/* Sections */
+.section{padding:2rem 0}
+.section.alt{background:#fff;border-top:1px solid rgba(0,0,0,0.03)}
+
+/* Services grid */
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+
+/* Metrics */
+.metrics{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem}
+.metric{background:linear-gradient(90deg,rgba(47,178,138,0.08),rgba(31,138,112,0.06));padding:1rem;border-radius:10px;min-width:180px}
+.metric strong{display:block;font-size:1.4rem;color:var(--accent)}
+
+/* Panel demo */
+.panel-demo{display:flex;gap:1rem;margin-top:1rem}
+.panel-sidebar{width:220px;background:linear-gradient(180deg,#fff,#f8fffb);padding:1rem;border-radius:10px;border:1px solid rgba(0,0,0,0.04)}
+.panel-sidebar h4{margin-bottom:0.5rem}
+#parcel-list{list-style:none}
+#parcel-list li{padding:0.45rem;border-radius:6px;cursor:pointer;color:var(--muted);margin-bottom:0.35rem}
+#parcel-list li.active{background:linear-gradient(90deg,var(--accent-2),var(--accent));color:#fff}
+
+/* Panel main */
+.panel-main{flex:1;background:var(--card);padding:1rem;border-radius:10px;border:1px solid rgba(0,0,0,0.04)}
+.panel-stats{display:flex;gap:1rem;justify-content:space-between}
+.stat{flex:1;padding:0.6rem;border-radius:8px;background:linear-gradient(180deg,#fff,#fcfffb);text-align:center}
+.stat p{font-size:1.25rem;color:var(--accent);margin-top:0.35rem}
+.panel-chart{margin-top:1rem;border-radius:8px;overflow:hidden;padding:0.5rem;background:#fff}
+
+/* Panel actions */
+.panel-actions{margin-top:1rem}
+.actions-row{display:flex;gap:0.5rem;margin-top:0.5rem}
+.actions-row input, .actions-row select{flex:1;padding:0.5rem;border-radius:8px;border:1px solid rgba(0,0,0,0.06)}
+
+/* Logs */
+.log-output{margin-top:0.75rem;background:#f9fff9;padding:0.6rem;border-radius:8px;min-height:48px;color:var(--muted)}
+
+/* Partners */
+.partner-logos{display:flex;gap:1rem;margin-top:1rem}
+.partner{background:#fff;padding:0.6rem 1rem;border-radius:8px;border:1px solid rgba(0,0,0,0.04)}
+
+/* Contact grid */
+.contact-grid{display:grid;grid-template-columns:1fr 280px;gap:1rem;align-items:start}
+form label{display:block;margin-top:0.6rem;font-weight:600;color:var(--muted)}
+input[type="text"], input[type="email"], textarea{width:100%;padding:0.6rem;border-radius:8px;border:1px solid rgba(0,0,0,0.06)}
+
+/* Footer */
+.site-footer{padding:1rem 0;background:#fff;border-top:1px solid rgba(0,0,0,0.04);margin-top:2rem}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-inner{flex-direction:column-reverse}
+  .panel-demo{flex-direction:column}
+  .contact-grid{grid-template-columns:1fr}
+  .nav{display:none}
+  .header-inner{gap:0.5rem}
+}
+
+/* Pricing Section */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.pricing-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 6px solid var(--accent);
+}
+
+.pricing-card.premium {
+  border-top-color: var(--accent-2);
+}
+
+.pricing-card h4 {
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.price {
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+.pricing-card ul {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+  text-align: left;
+}
+
+.pricing-card ul li {
+  margin-bottom: 0.4rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.pricing-card ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
