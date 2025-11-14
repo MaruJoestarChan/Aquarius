@@ -151,3 +151,79 @@ input[type="text"], input[type="email"], textarea{width:100%;padding:0.6rem;bord
   color: var(--accent);
   font-weight: bold;
 }
+
+/* Mejoras de responsividad real para móviles */
+@media (max-width: 600px) {
+
+  /* --- HEADER --- */
+  .brand {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .brand-text h1 {
+    font-size: 0.9rem;
+  }
+
+  .brand-text p {
+    font-size: 0.65rem;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Ocultar navegación completa si no tienes menú hamburguesa */
+  .nav {
+    display: none !important;
+  }
+
+  /* --- HERO --- */
+  .hero-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero h2 {
+    font-size: 1.4rem;
+  }
+
+  /* --- GRID DE SERVICIOS --- */
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- PANEL DEMO --- */
+  .panel-demo {
+    flex-direction: column;
+  }
+
+  .panel-sidebar {
+    width: 100%;
+  }
+
+  .panel-stats {
+    flex-direction: column;
+  }
+
+  .stat p {
+    font-size: 1rem;
+  }
+
+  /* --- Contacto --- */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Botones más grandes en móvil --- */
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
